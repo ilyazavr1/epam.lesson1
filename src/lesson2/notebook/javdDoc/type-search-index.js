@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"lesson2.notebook","l":"Controller"},{"p":"lesson2.notebook","l":"Main"},{"p":"lesson2.notebook","l":"Notebook"},{"p":"lesson2.notebook","l":"RegexConstants"},{"p":"lesson2.notebook","l":"ScannerService"},{"p":"lesson2.notebook","l":"TextConstants"},{"p":"lesson2.notebook","l":"View"}]

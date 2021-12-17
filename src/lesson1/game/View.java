@@ -1,4 +1,4 @@
-package game;
+package lesson1.game;
 
 
 import java.util.List;
