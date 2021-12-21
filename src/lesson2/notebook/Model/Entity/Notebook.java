@@ -1,4 +1,4 @@
-package lesson2.notebook;
+package lesson2.notebook.Model.Entity;
 /**
  * Representing an notebook
  *
@@ -11,6 +11,7 @@ public class Notebook {
     private String secondName;
     private String name;
     private String surname;
+    private String login;
 
 
     /**
@@ -18,7 +19,10 @@ public class Notebook {
      */
     public Notebook() {
     }
-
+    public Notebook( String name, String login) {
+        this.name = name;
+        this.login = login;
+    }
     /**
      * Initialize new object of Notebook with given parameters.
      *
@@ -26,11 +30,11 @@ public class Notebook {
      * @param name       String representing name
      * @param surname    String representing surname
      */
-    public Notebook(String secondName, String name, String surname) {
+    public Notebook(String secondName, String name, String surname, String login) {
         this.secondName = secondName;
         this.name = name;
         this.surname = surname;
-
+        this.login = login;
     }
 
     /**
@@ -87,4 +91,11 @@ public class Notebook {
         this.surname = surname;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 }

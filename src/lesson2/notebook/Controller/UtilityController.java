@@ -1,4 +1,7 @@
-package lesson2.notebook;
+package lesson2.notebook.Controller;
+
+import lesson2.notebook.RegexConstants;
+import lesson2.notebook.View.View;
 
 import java.util.Scanner;
 
@@ -10,7 +13,7 @@ import java.util.Scanner;
  * @since 2021-12-16
  */
 
-public class ScannerService implements RegexConstants {
+public class UtilityController implements RegexConstants {
     private final Scanner scanner;
     private final View view;
 
@@ -20,7 +23,7 @@ public class ScannerService implements RegexConstants {
      * @param view to use output in console
      * @param scanner to get input form console
      */
-    public ScannerService(View view, Scanner scanner) {
+    public UtilityController(View view, Scanner scanner) {
         this.scanner = scanner;
         this.view = view;
     }

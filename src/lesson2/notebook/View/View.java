@@ -1,4 +1,6 @@
-package lesson2.notebook;
+package lesson2.notebook.View;
+
+import lesson2.notebook.Model.Entity.Notebook;
 
 /**
  * View module to print messages in console.

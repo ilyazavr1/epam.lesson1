@@ -18,4 +18,6 @@ public interface TextConstants {
      */
     String REQUIRE_SURNAME = "surname";
 
+    String REQUIRE_LOGIN = "login";
+
 }

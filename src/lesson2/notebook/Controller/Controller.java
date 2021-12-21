@@ -1,4 +1,8 @@
-package lesson2.notebook;
+package lesson2.notebook.Controller;
+
+import lesson2.notebook.Model.Entity.Notebook;
+import lesson2.notebook.Model.NotebookService;
+import lesson2.notebook.View.View;
 
 import java.util.Scanner;
 
@@ -9,7 +13,7 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2021-12-16
  */
-public class Controller implements TextConstants, RegexConstants {
+public class Controller  {
 
     private final Notebook notebook;
     private final View view;
@@ -32,13 +36,18 @@ public class Controller implements TextConstants, RegexConstants {
      * Starts initializing process of new object type of Notebook
      */
     public void userProcess() {
-        ScannerService scannerService = new ScannerService(view, new Scanner(System.in));
 
-        notebook.setName(scannerService.inputValue(REQUIRE_NAME, REGEX_NAME));
-        notebook.setSecondName(scannerService.inputValue(REQUIRE_SECOND_NAME, REGEX_SECOND_NAME));
-        notebook.setSurname(scannerService.inputValue(REQUIRE_SURNAME, REGEX_SURNAME));
+        NotebookService notebookService = new NotebookService(view, new Scanner(System.in));
 
-        view.printFullName(notebook);
+        notebookService.inputNote();
+
+
+    // view.printFullName(notebook);
+
+
+
+
+
     }
 
 }
