@@ -2,6 +2,14 @@ package lesson2.notebook.View;
 
 import lesson2.notebook.Model.Entity.Notebook;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import static lesson2.notebook.TextConstants.INPUT_DATA;
+import static lesson2.notebook.TextConstants.WRONG_INPUT_DATA;
+
+
+
 /**
  * View module to print messages in console.
  *
@@ -10,6 +18,38 @@ import lesson2.notebook.Model.Entity.Notebook;
  * @since 2021-12-16
  */
 public class View {
+    private static String MESSAGES_BUNDLE_NAME = "messages";
+
+    public static final ResourceBundle bundle = ResourceBundle.getBundle(MESSAGES_BUNDLE_NAME, new Locale("ua", "UA"));
+                    //new Locale("ua", "UA"));  // Ukrainian
+                    // new Locale("en"));        // English
+
+
+    public void printStringInput(String message) {
+        printMessage(concatenationString(
+                bundle.getString(INPUT_DATA),
+                bundle.getString(message)));
+    }
+
+    public void printWrongStringInput(String message) {
+        printMessage(concatenationString(
+                bundle.getString(WRONG_INPUT_DATA),
+                bundle.getString(INPUT_DATA),
+                bundle.getString(message)));
+    }
+
+        private String concatenationString(String... message){
+        StringBuilder concatString = new StringBuilder();
+        for(String v : message) {concatString.append(v);}
+        return new String(concatString);
+    }
+
+    private void printMessage(String message){
+        System.out.println(message);
+    }
+
+
+
 
     /**
      * Prints messages that requires to input specific data

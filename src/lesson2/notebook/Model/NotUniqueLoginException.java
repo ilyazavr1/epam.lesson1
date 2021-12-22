@@ -1,6 +1,6 @@
 package lesson2.notebook.Model;
 
-public class NotUniqueLoginException extends Exception  {
+public class NotUniqueLoginException extends Exception {
     private String loginData;
 
     public String getLoginData() {
@@ -11,5 +11,4 @@ public class NotUniqueLoginException extends Exception  {
         super(message);
         this.loginData = loginData;
     }
-
 }

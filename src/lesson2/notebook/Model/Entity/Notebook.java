@@ -1,4 +1,8 @@
 package lesson2.notebook.Model.Entity;
+
+import lesson2.notebook.Model.DBNotebook;
+import lesson2.notebook.Model.NotUniqueLoginException;
+
 /**
  * Representing an notebook
  *
@@ -19,7 +23,10 @@ public class Notebook {
      */
     public Notebook() {
     }
-    public Notebook( String name, String login) {
+    public Notebook( String name, String login) throws NotUniqueLoginException {
+       if (DBNotebook.checkLogin(login)){
+           throw new NotUniqueLoginException("Not unique login", login);
+       }
         this.name = name;
         this.login = login;
     }
@@ -97,5 +104,13 @@ public class Notebook {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    @Override
+    public String toString() {
+        return "Notebook{" +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                '}';
     }
 }

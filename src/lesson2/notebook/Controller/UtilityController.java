@@ -40,11 +40,11 @@ public class UtilityController implements RegexConstants {
     public String inputValue(String message, String regex) {
         String name;
 
-        view.printInput(message);
+        view.printStringInput(message);
         name = scanner.nextLine();
 
         while (!name.matches(regex)) {
-            view.printWrongInput(message);
+            view.printWrongStringInput(message);
             name = scanner.nextLine();
         }
 

@@ -13,7 +13,7 @@ public class NotebookService implements TextConstants, RegexConstants {
     private View view;
     private Scanner sc;
 
-    private String firstName;
+    private String name;
     private String login;
 
     public NotebookService(View view, Scanner sc) {
@@ -23,14 +23,24 @@ public class NotebookService implements TextConstants, RegexConstants {
 
 
     public void inputNote(){
-        Notebook notebook = new Notebook();
+        String regexBundleName = (String.valueOf(View.bundle.getLocale()).equals("ua"))
+                ? REGEX_NAME_UKR : REGEX_NAME;
         UtilityController utilityController = new UtilityController(view, new Scanner(System.in));
 
-        notebook.setName(utilityController.inputValue(REQUIRE_NAME, REGEX_NAME));
-       // notebook.setSecondName(utilityController.inputValue(REQUIRE_SECOND_NAME, REGEX_SECOND_NAME));
-       // notebook.setSurname(utilityController.inputValue(REQUIRE_SURNAME, REGEX_SURNAME));
-        notebook.setLogin(utilityController.inputValue(REQUIRE_LOGIN, REGEX_LOGIN));
-
+        this.name = utilityController.inputValue(FIRST_NAME, regexBundleName);
+        this.login = utilityController.inputValue(LOGIN_DATA, REGEX_LOGIN);
 
     }
+    public void inputLogin(){
+        UtilityController utilityController = new UtilityController(view, new Scanner(System.in));
+        this.login = utilityController.inputValue(LOGIN_DATA, REGEX_LOGIN);
+    }
+
+    public String getName(){
+        return this.name;
+    }
+    public String getLogin(){
+        return this.login;
+    }
+
 }

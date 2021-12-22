@@ -2,6 +2,7 @@ package lesson2.notebook;
 
 import lesson2.notebook.Controller.Controller;
 import lesson2.notebook.Model.Entity.Notebook;
+import lesson2.notebook.Model.Model;
 import lesson2.notebook.View.View;
 
 /**
@@ -13,7 +14,7 @@ public class Main {
      * @param args input args in manin method
      */
     public static void main(String[] args) {
-        Controller controller = new Controller(new Notebook(), new View());
+        Controller controller = new Controller(new Model(), new View());
         controller.userProcess();
     }
 

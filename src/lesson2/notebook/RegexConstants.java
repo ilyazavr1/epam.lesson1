@@ -7,7 +7,9 @@ public interface RegexConstants {
     /**
      * Regex to validate name.
      */
-    String REGEX_NAME = "^([a-z]|[A-Z]){1,20}";
+    String REGEX_NAME = "^[A-Z][a-z]{1,20}";
+
+    String REGEX_NAME_UKR = "^[А-ЯІЇЄ][а-яіїє']{1,20}$";
     /**
      * Regex to validate second name
      */
@@ -18,5 +20,10 @@ public interface RegexConstants {
     String REGEX_SURNAME = "^([a-z]|[A-Z]){1,20}";
 
     String REGEX_LOGIN = "^[A-Za-z0-9_-]{8,20}$";
+
+
+
+
+
 
 }
